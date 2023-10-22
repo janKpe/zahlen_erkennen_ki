@@ -9,7 +9,7 @@ import torch.optim as optim
 from matplotlib import pyplot as plt
 from os import path
 
-device = "cuda"
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 batchs = 390
 batchsize = 64
 epochs = int(input("Epochs: ")) 

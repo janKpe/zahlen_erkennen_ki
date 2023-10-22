@@ -7,7 +7,7 @@ from PIL import Image
 import random
 from os import listdir
 
-device = "cuda"
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
 
